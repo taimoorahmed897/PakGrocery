@@ -13,9 +13,44 @@ useEffect(()=>{
 },[]
 )
 
-return<div>
-        Cart Scren
+return<div className="cart">
+        <div className="cart-list">
+        <ul className="cart-list-container">
+                <li>
+                        <h3>
+                                Shopping Cart
+                        </h3>
+                        <div>
+                                Price
+                        </div>
+                </li>
+                {
+                        cartItems.lenght===0?
+                        <div>
+                                Cart is empty!
+                        </div>:
+                        cartItems.map(items=>
+                                <div>
+                                        <img src={item.img} alt="product"></img>
+                                        <div className="cart-name">
+                                                <div>
+                                                        {item.name}
+                                                </div>
+                                                <div>
+                                                        <select></select>
+                                                </div>
+                                        </div>
+                                </div>
+                                )
+                }
+
+        </ul>
         </div>
+        <div className="cart-action">
+
+        </div>
+
+</div>
 
 }
 export default CartScreen
